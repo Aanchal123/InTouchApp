@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DataService } from '../data.service';
 
 @Component({
@@ -6,17 +6,19 @@ import { DataService } from '../data.service';
   templateUrl: './contact-search.component.html',
   styleUrls: ['./contact-search.component.scss']
 })
-export class ContactSearchComponent implements OnInit {
-  contacts: Object;
+export class ContactSearchComponent implements OnInit{
+  @Input() contacts = []; 
+  @Output() display = new EventEmitter();
+  searchContact: string;
 
   constructor(private data: DataService) { }
+  
+  ngOnInit() {    
+    this.data.getContacts().subscribe(data => this.contacts = data);
+  }
 
-  ngOnInit() {
-    this.data.getContacts().subscribe(data => {
-      this.contacts = data
-      console.log(this.contacts);
-    }
-  );
+  onClick (contact){
+    this.display.emit(contact)
   }
 
 }

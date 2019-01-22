@@ -1,28 +1,21 @@
-.navbar {
-    background-color: aqua;
-    font-weight: bold;
-    font-size: 2em;
-}
-
-.form-control {
-    background: #111111;
-    border: 3px solid #2f2f2f;
-    padding: 10px;
-}
-
-.btn {
-    background-color: aqua;
-    padding: 12px;
-    border: none;
-    color: #000;
+.btn {   
     cursor: pointer;
 }
 
-ul {
+.form-control {
+    border: 2px solid;
+}
+
+.card-header{
+    color: white;
+}
+
+#ul_contact {
     list-style-type: none;
     margin: 0;padding: 0;
+    cursor: pointer;
 
-    li {
+    #li_contact {
         background: rgb(238, 238, 238);
         padding: 2em;
         border-radius: 4px;
@@ -30,7 +23,7 @@ ul {
         display: grid;
         grid-template-columns: 60px auto;
 
-        p {
+        #p_contact {
             font-weight: bold;
             margin-left: 20px;
         }
