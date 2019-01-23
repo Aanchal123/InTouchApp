@@ -11,6 +11,7 @@ export class ContactSearchComponent implements OnInit{
   contacts: any;
   searchContacts: any;
   subs: Subscription; 
+  p: any;
 
   userDetails = {
     Anniversary: "",
